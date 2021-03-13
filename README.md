@@ -1,5 +1,5 @@
 # 1092facedetect
-<h2>人臉辨識練習小程式</h2>
+<h2>1092軟體工程</h2>
 版本：V0.1<br>
 <br>
 用途：可以作為門禁、打卡功能快速開發<br>
@@ -20,9 +20,9 @@
 　　人臉模型：http://dlib.net/files/dlib_face_recognition_resnet_model_v1.dat.bz2<br>
 <br>
 使用方式：<br>
-　　1、先收集所有屁孩的大頭照或生活照，正面、臉清晰照片，檔名為屁孩的名字，存至 rec/pic，如 rec/pic/john.jpg，同一個人越多張越好，如 rec/pic/john#1.jpg rec/pic/john#2.jpg<br>
-　　2、將照片作出特徵檔，執行 pic_to_numpy.py：python pic_to_numpy.py<br>
-　　3、啟動main_frame.py帶出主畫面
+　　1、先收集所有使用者的大頭照或生活照，正面、臉清晰照片，檔名為使用者的名字，存至 rec/pic，如 rec/pic/john.jpg，同一個人越多張越好，如 rec/pic/perry#1.jpg rec/pic/perry#2.jpg<br>
+　　2、啟動main_frame.py帶出主畫面
+    
 <br>
 程式說明：<br>
 　　rec/pic 目錄，放人臉，一個人一張，如 john.jpg，同一個jpg只能有一個人，同一個人請多檔，如john#1.jpg john#2.jpg<br>
@@ -31,5 +31,5 @@
 　　cam.py 啟動Webcam，人臉會被自動框出，每30個影格判斷一次該影格的人是誰。<br>
 <br>
 參考資料：<br>
-　　1、https://tpu.thinkpower.com.tw/tpu/articleDetails/950<br>　　
-	2、https://github.com/shadowjohn/108facedetect
+　  1、https://tpu.thinkpower.com.tw/tpu/articleDetails/950　　
+    2、https://github.com/shadowjohn/108facedetect
