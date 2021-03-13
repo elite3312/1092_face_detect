@@ -31,5 +31,4 @@
 　　cam.py 啟動Webcam，人臉會被自動框出，每30個影格判斷一次該影格的人是誰。<br>
 <br>
 參考資料：<br>
-　  1、https://tpu.thinkpower.com.tw/tpu/articleDetails/950　　
-    2、https://github.com/shadowjohn/108facedetect
+　  1、https://github.com/shadowjohn/108facedetect
