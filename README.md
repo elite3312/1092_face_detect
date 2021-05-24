@@ -13,6 +13,7 @@
 　　pip install scikit-image<br>
 　　pip install matplotlib<br>
 　　pip install imutils<br>
+    pip install pyzbar<br>
 　　Webcam 一組<br>
 <br>
 第三方下載：<br>

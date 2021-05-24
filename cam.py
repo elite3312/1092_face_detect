@@ -5,7 +5,12 @@ import imutils
 import php
 import os
 import numpy
-import time
+import time            
+import winsound
+import datetime
+import tkinter as tk
+import tsv_writer
+from pyzbar.pyzbar import decode
 def camLoop():
 
   my = php.kit()
@@ -35,6 +40,7 @@ def camLoop():
     v = numpy.load(f)
     descriptors.append(v)
 
+
   #選擇第一隻攝影機
   cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
   #調整預設影像大小，預設值很大，很吃效能
@@ -49,6 +55,8 @@ def camLoop():
   step_while = 0
   x1=0
   last_rec_name=""
+  img = cv2.imread('qrcode.png')
+  use_code = ['enter']
   while(cap.isOpened()):
     #time.sleep(0.5)
     #讀出frame資訊
@@ -56,11 +64,21 @@ def camLoop():
     step_while=step_while+1
     #取出偵測的結果
     #print(step_while)
-    if step_while>60:
+    if step_while>120:
       x1=0
       last_rec_name = ""
       step_while = 0 
-    if step_while % 30==0:
+      
+    if step_while % 60==0:
+      for code in decode(frame):
+        if code.data.decode('utf-8') in use_code:
+            year=datetime.datetime.now().strftime('%Y')
+            month=datetime.datetime.now().strftime('%m')
+            day=datetime.datetime.now().strftime('%d')
+            current_time=datetime.datetime.now().strftime('%H:%M:%S') 
+            tsv_writer.write_tsv("VIP",current_time,year,month,day)
+            print('You can enter!')
+            time.sleep(3)
       dist = []
       #偵測人臉
       face_rects, scores, idx = detector.run(frame, 0)    
@@ -103,7 +121,7 @@ def camLoop():
           cd_sorted = sorted(c_d.items(), key=lambda kv: kv[1])
           # 取得最短距離就為辨識出的人名
           #print(cd_sorted)
-          if cd_sorted[0][1]<0.55:
+          if cd_sorted[0][1]<0.4:
             rec_name = cd_sorted[0][0]
             m = my.explode("#",rec_name)
             last_rec_name = m[0]
@@ -113,6 +131,15 @@ def camLoop():
             step_while = 0          
             # 將辨識出的人名印到圖片上面
             cv2.putText(frame, last_rec_name, (x1, y1), cv2. FONT_HERSHEY_SIMPLEX , 1, ( 255, 255, 255), 2, cv2. LINE_AA)        
+            year=datetime.datetime.now().strftime('%Y')
+            month=datetime.datetime.now().strftime('%m')
+            day=datetime.datetime.now().strftime('%d')
+            current_time=datetime.datetime.now().strftime('%H:%M:%S') 
+            print(year," ",month," ",day," ",current_time,"員工ID:",last_rec_name)
+            winsound.MessageBeep()
+            tsv_writer.write_tsv(last_rec_name,current_time,year,month,day)
+            break
+            
             #print(m[0])
           
     if x1!=0:
@@ -121,6 +148,7 @@ def camLoop():
       cv2.putText(frame, last_rec_name, (x1, y1), cv2. FONT_HERSHEY_SIMPLEX , 1, ( 255, 255, 255), 2, cv2. LINE_AA)          
     
     cv2.imshow( "Face Detection, press esc to quit", frame)
+
    
     #如果按下ESC键，就退出
     if cv2.waitKey( 10) == 27:
