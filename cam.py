@@ -70,6 +70,7 @@ def camLoop():
       step_while = 0 
       
     if step_while % 60==0:
+      #條碼偵測
       for code in decode(frame):
         if code.data.decode('utf-8') in use_code:
             year=datetime.datetime.now().strftime('%Y')
@@ -130,7 +131,8 @@ def camLoop():
             last_rec_name = last_rec_name.capitalize()
             step_while = 0          
             # 將辨識出的人名印到圖片上面
-            cv2.putText(frame, last_rec_name, (x1, y1), cv2. FONT_HERSHEY_SIMPLEX , 1, ( 255, 255, 255), 2, cv2. LINE_AA)        
+            cv2.putText(frame, last_rec_name, (x1, y1), cv2. FONT_HERSHEY_SIMPLEX , 1, ( 255, 255, 255), 2, cv2. LINE_AA)     
+            #獲取當時時間並記錄到打卡資料庫
             year=datetime.datetime.now().strftime('%Y')
             month=datetime.datetime.now().strftime('%m')
             day=datetime.datetime.now().strftime('%d')
