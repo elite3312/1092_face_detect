@@ -14,7 +14,7 @@
 　　pip install matplotlib<br>
 　　pip install imutils<br>
     pip install pyzbar<br>
-    CMAKE
+    CMAKE<br>
 　　Webcam 一組<br>
 <br>
 第三方下載：<br>
