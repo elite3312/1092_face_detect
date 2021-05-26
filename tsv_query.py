@@ -7,7 +7,7 @@ class basedesk():
         self.root.config()
         self.root.title('Base page')
         self.root.geometry('800x800')        
-        Query_screen(self.root)
+        self.Query_screen=Query_screen(self.root)
 class Query_screen():
     def __init__(self,master):
         

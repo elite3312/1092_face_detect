@@ -80,6 +80,7 @@ class Login_screen():
             tkinter.messagebox.showinfo(title='Login Failed! ',message='Not Found, please try again.')
 class user_screen():
     def __init__(self,master):
+        
         self.master = master
         self.master.config(bg='white')
         self.user_screen = tk.Frame(self.master,)
@@ -92,13 +93,23 @@ class user_screen():
         btn.pack()
         activate_cam_btn = tk.Button(self.user_screen,text='啟動人臉辨識',command=cam.camLoop)
         activate_cam_btn.pack()
-    def register(self,):
+        self.register_base=register_main_frame.basedesk(master)
+        self.tsv_query_base=tsv_query.basedesk(master)
 
-        register_main_frame.basedesk(self.master)
+        self.register_base.Register_screen.register_frame.pack_forget()
+        self.tsv_query_base.Query_screen.query_frame.pack_forget()
+        self.tsv_query_base.Query_screen.show_frame.pack_forget()
+    def register(self,):
+        self.register_base.Register_screen.register_frame.pack()
+        
     def query(self,):
-        tsv_query.basedesk(self.master)
+        
+        self.tsv_query_base.Query_screen.query_frame.pack()
+        self.tsv_query_base.Query_screen.show_frame.pack()
     def logout(self,):       
         self.user_screen.destroy()
+        self.register_base.Register_screen.good_bye()
+        self.tsv_query_base.Query_screen.good_bye()
         Login_screen(self.master)
 if __name__ == '__main__':    
     root = tk.Tk()

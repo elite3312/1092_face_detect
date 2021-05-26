@@ -27,15 +27,21 @@ def create_tsv(guard_id,year,month,day):
         print("Directory " , path+year_path+month_path ,  " Created ")
     else:    
         print("Directory " , path+year_path+month_path ,  " already exists")
-    try:
-        out_file=open("attendence-record/"+year+"/"+month+
-        "/attendance-record-"+year+"-"+month+"-"+day+".tsv", 'wt',encoding="utf-8")
-        tsv_writer = csv.writer(out_file,delimiter='\t', lineterminator='\n' )
-        tsv_writer.writerow(['值班警衛ID:'+guard_id,'date:'+year+'-'+month+'-'+day])
-        #tsv_writer.writerow(['employee_id',year+'-'+month+'-'+day])
-        out_file.close()
-    except OSError:
-        print ("Creation of the directory %s failed" % path)
+    if not os.path.exists("attendence-record/"+year+"/"+month+
+        "/attendance-record-"+year+"-"+month+"-"+day+".tsv"):
+        try:
+
+            out_file=open("attendence-record/"+year+"/"+month+
+            "/attendance-record-"+year+"-"+month+"-"+day+".tsv", 'wt',encoding="utf-8")
+            tsv_writer = csv.writer(out_file,delimiter='\t', lineterminator='\n' )
+            tsv_writer.writerow(['值班警衛ID:'+guard_id,'date:'+year+'-'+month+'-'+day])
+            #tsv_writer.writerow(['employee_id',year+'-'+month+'-'+day])
+            out_file.close()
+        except OSError:
+            print ("Creation of the directory %s failed" % path)
+    else:    
+        print("Directory " +"attendence-record/"+year+"/"+month+
+        "/attendance-record-"+year+"-"+month+"-"+day+".tsv" +  " already exists")
  
     
 if __name__ == "__main__":

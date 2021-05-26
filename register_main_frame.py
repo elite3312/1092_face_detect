@@ -11,7 +11,7 @@ class basedesk():
         self.root.config()
         self.root.title('Base page')
         self.root.geometry('800x800')        
-        Register_screen(self.root)
+        self.Register_screen=Register_screen(self.root)
 class Register_screen():
     def __init__(self,master):
         self.master = master
