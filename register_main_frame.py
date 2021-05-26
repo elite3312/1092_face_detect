@@ -38,7 +38,7 @@ class Register_screen():
         self.result_label.pack()
 
     def good_bye(self,):
-        self.register_frame.destroy()
+        self.register_frame.pack_forget()
         
     def go_to_register(self,):
         name=self.register_entry.get()

@@ -110,6 +110,8 @@ class user_screen():
         self.user_screen.destroy()
         self.register_base.Register_screen.good_bye()
         self.tsv_query_base.Query_screen.good_bye()
+        self.register_base=None
+        self.tsvquery_base=None
         Login_screen(self.master)
 if __name__ == '__main__':    
     root = tk.Tk()

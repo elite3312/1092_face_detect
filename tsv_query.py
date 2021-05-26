@@ -46,11 +46,11 @@ class Query_screen():
 
 
 
-
+        self.notShown=True
         self.exit_btn = tk.Button(self.query_frame, text='離開',command=self.good_bye)
         self.exit_btn.pack()
 
-        self.show_frame=tk.Frame(self.master,width=600,height=600)
+        self.show_frame=self.show_frame=tk.Frame(self.master,width=600,height=600)
         self.show_frame.pack(side=tk.TOP) #.grid(row=0,column=0)
 
         self.canvas=tk.Canvas(self.show_frame,bg='#FFFFFF',width=600,height=600,scrollregion=(0,0,500,500))
@@ -58,6 +58,16 @@ class Query_screen():
         query_btn.pack()
         self.canvas.pack()
     def show_records(self,):
+        if not self.notShown:
+            self.show_frame.destroy()
+            
+            self.show_frame=tk.Frame(self.master,width=600,height=600)
+            self.show_frame.pack(side=tk.TOP) #.grid(row=0,column=0)
+
+            self.canvas=tk.Canvas(self.show_frame,bg='#FFFFFF',width=600,height=600,scrollregion=(0,0,500,500))
+            self.canvas.pack()
+        if self.notShown:
+            self.notShown=False
         year=self.year_entry.get()
         month=self.month_entry.get()
         day=self.day_entry.get()
@@ -104,8 +114,8 @@ class Query_screen():
         
         
     def good_bye(self,):
-        self.query_frame.destroy()
-        self.show_frame.destroy()
+        self.query_frame.pack_forget()
+        self.show_frame.pack_forget()
 if __name__ == '__main__':    
     root = tk.Tk()
     basedesk(root)
