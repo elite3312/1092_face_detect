@@ -1,6 +1,7 @@
 import csv
 import tkinter as tk
 import tkinter.messagebox
+import datetime
 class basedesk():
     def __init__(self,master):
         self.root = master
@@ -10,7 +11,9 @@ class basedesk():
         self.Query_screen=Query_screen(self.root)
 class Query_screen():
     def __init__(self,master):
-        
+        year=datetime.datetime.now().strftime('%Y')
+        month=datetime.datetime.now().strftime('%m')
+        day=datetime.datetime.now().strftime('%d')
         self.master = master
         self.master.config(bg='white')
         self.query_frame = tk.Frame(self.master,)
@@ -25,7 +28,7 @@ class Query_screen():
         year_label.pack(side=tk.LEFT)
 
         self.year_entry = tk.Entry(self.query_frame)
-        self.year_entry.insert(-1,"2021")
+        self.year_entry.insert(-1,year)
         self.year_entry.pack(side=tk.LEFT)
 
 
@@ -33,7 +36,7 @@ class Query_screen():
         month_label.pack(side=tk.LEFT)
 
         self.month_entry = tk.Entry(self.query_frame)
-        self.month_entry.insert(-1,"5")
+        self.month_entry.insert(-1,month)
         self.month_entry.pack(side=tk.LEFT)
 
 
@@ -41,7 +44,7 @@ class Query_screen():
         day_label.pack(side=tk.LEFT)
 
         self.day_entry=tk.Entry(self.query_frame)
-        self.day_entry.insert(-1,"23")
+        self.day_entry.insert(-1,day)
         self.day_entry.pack(side=tk.LEFT)
 
 

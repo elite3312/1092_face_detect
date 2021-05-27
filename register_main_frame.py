@@ -2,7 +2,7 @@ import tkinter as tk
 import tkinter.messagebox
 import cam
 import register
-import register_pic_to_numpy
+import pic_to_numpy
 import csv
 
 class basedesk():
@@ -64,7 +64,7 @@ class Register_screen():
                 
         register.main(name)
         tkinter.messagebox.showinfo(title='looks good!',message='正在產生向量!')
-        register_pic_to_numpy.main()
+        pic_to_numpy.main()
         tkinter.messagebox.showinfo(title='looks good!',message='員工'+name+'註冊成功!')
         self.good_bye()
 if __name__ == '__main__':    
