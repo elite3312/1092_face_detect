@@ -1,7 +1,8 @@
 import cv2
 def main(name):
   cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
-
+  cap.set(cv2. CAP_PROP_FRAME_WIDTH, 320)
+  cap.set(cv2. CAP_PROP_FRAME_HEIGHT, 240)
   #variable to record this is the nth picture taken
   pictureCount=0
 
