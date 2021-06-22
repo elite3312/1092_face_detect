@@ -7,7 +7,7 @@ import cam
 #month='01'
 #day='07'
 #date='2021/1/7'
-def create_tsv(guard_id,year,month,day):
+def create_tsv(guard_id,year,month,day):#create a file structure according to the parameters
     path="attendence-record"
     if not os.path.exists(path):
         os.mkdir(path)

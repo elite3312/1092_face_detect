@@ -1,13 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[7]:
-
-
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
 import os
 import pathlib
 import time
@@ -26,6 +16,7 @@ class basedesk():
         self.root.geometry('200x200')        
         Login_screen(self.root)
 class Login_screen():
+    
     def __init__(self,master):
         
         self.master = master
@@ -96,9 +87,8 @@ class user_screen():
         self.register_base=register_main_frame.basedesk(master)
         self.tsv_query_base=tsv_query.basedesk(master)
 
-        self.register_base.Register_screen.register_frame.pack_forget()
-        self.tsv_query_base.Query_screen.query_frame.pack_forget()
-        self.tsv_query_base.Query_screen.show_frame.pack_forget()
+        self.register_base.Register_screen.good_bye()
+        self.tsv_query_base.Query_screen.good_bye()
     def register(self,):
         self.register_base.Register_screen.register_frame.pack()
         
@@ -112,6 +102,7 @@ class user_screen():
         self.tsv_query_base.Query_screen.good_bye()
         self.register_base=None
         self.tsvquery_base=None
+
         Login_screen(self.master)
 if __name__ == '__main__':    
     root = tk.Tk()
