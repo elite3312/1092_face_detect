@@ -24,7 +24,9 @@
     3、啟動人臉辨識
     
 <br>
-
+<br>
+投影片是壓縮檔
+<br>
 <br>
 參考資料：<br>
 　  1、https://github.com/shadowjohn/108facedetect
