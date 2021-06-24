@@ -12,7 +12,10 @@
 　　pip install opencv-python<br>
 　　pip install scikit-image<br>
 　　pip install matplotlib<br>
-　　pip install imutils<br>pip install pyzbar<br>CMAKE<br>Webcam 一組<br>
+　　pip install imutils<br>
+    pip install pyzbar<br>
+    CMAKE<br>
+    Webcam 一組<br>
 <br>
 第三方下載：<br>
 　　68特徵：http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2<br>
