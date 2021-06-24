@@ -1,4 +1,0 @@
-1.註冊介面:執行register_main_frame的mainloop()
-2.tsv_create:警衛登入建立當日tsv檔。執行tsvcreate的create_tsv()
-3.tsv_writer:打卡後在tsv檔append打卡紀錄的介面。執行tsv_writer的write_tsv()
-4.tsv_query:查詢打卡紀錄的介面
