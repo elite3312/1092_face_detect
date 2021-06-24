@@ -13,7 +13,7 @@
 　　pip install scikit-image<br>
 　　pip install matplotlib<br>
 　　pip install imutils<br>
-    pip install pyzbar<br>
+  pip install pyzbar<br>
     CMAKE<br>
     Webcam 一組<br>
 <br>
