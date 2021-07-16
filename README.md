@@ -5,17 +5,17 @@
 用途：可以作為門禁、打卡功能快速開發<br>
 <br>
 相依程式：<br>
-　　 python 3.6.4 x86 (32bit)<br>
-　　 pip install scipy<br>
-　　 pip install dlib<br>
-　　 pip install numpy<br>
-　　 pip install opencv-python<br>
-　　 pip install scikit-image<br>
-　　 pip install matplotlib<br>
-　　 pip install imutils <br>
-     pip install pyzbar<br>
-     CMAKE<br>
-     Webcam 一組<br>
+python 3.6.4 x86 (32bit)<br>
+pip install scipy<br>
+pip install dlib<br>
+pip install numpy<br>
+pip install opencv-python<br>
+pip install scikit-image<br>
+pip install matplotlib<br>
+pip install imutils <br>
+pip install pyzbar<br>
+CMAKE<br>
+Webcam 一組<br>
 <br>
 第三方下載：<br>
 　　68特徵：http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2<br>
