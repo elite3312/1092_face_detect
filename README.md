@@ -4,6 +4,10 @@
 <br>
 用途：可以作為門禁、打卡功能快速開發<br>
 <br>
+demo：<br>
+  <img src="demo.png">
+<br>
+<br>
 相依程式：<br>
 python 3.6.4 x86 (32bit)<br>
 pip install scipy<br>
